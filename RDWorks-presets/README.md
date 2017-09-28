@@ -1,6 +1,6 @@
-# RDworks-presets
+# RDworks-parameters
 
-This is basically a backup and a development maybe platform of the RDworks cutting presets that can be loaded through the GUI. 
+This is basically a backup and a development maybe platform of the RDworks cutting parameters that can be loaded through the GUI. 
 
 This is not a file a user can import in the software... This is something that needs to be overwritten in the installation folder. 
 

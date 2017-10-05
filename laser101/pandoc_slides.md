@@ -4,14 +4,6 @@
 
 # In the morning
 
-<div class="notes">
-This is my note.
-
-- It can contain Markdown
-- like this list
-
-</div>
-
 ## Getting up
 
 - for this, place reveal.js in the root
@@ -23,9 +15,13 @@ pandoc -t revealjs -s pandoc_slides.md -o habits.html -V theme=white
 pandoc -t revealjs -s pandoc_slides.md -o habits.html -V theme=white -V revealjs-url=http://lab.hakim.se/reveal-js
 ```
 
-Note: 
-This is a note
-uep.
+<div class="notes">
+This is my note.
+
+- It can contain Markdown
+- like this list
+
+</div>
 
 ---
 

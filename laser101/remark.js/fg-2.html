@@ -26,7 +26,11 @@
         position: absolute;
         bottom: 3em;
       }
-      li p { line-height: 1.25em; }
+      img {
+        max-height: auto;
+        max-width: 100%;
+      }
+      li { line-height: 1.25em; padding: 5px 0px;}
       .red { color: #fa0000; }
       .large { font-size: 2em; }
       a, a > code {
@@ -127,7 +131,7 @@
     <script src="remark.language.js"></script>
     <script>
       var slideshow = remark.create({
-          sourceUrl: 'laser101.md'
+          sourceUrl: 'laser_101.md'
         }) ;
     </script>
     <script>

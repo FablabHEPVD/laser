@@ -1,6 +1,0 @@
-
-## first slide
-
----
-
-## Second slide

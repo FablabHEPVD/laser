@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+    <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+    <title>Remark</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li { line-height: 1.25em; padding: 5px 0px;}
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+      
+      # OverFlow
+
+      ## slides for images
+
+      https://docs.google.com/presentation/d/15bdT4X217hhxeqeeQhQBeMskxwIufraR6nCiBZk1H6w/edit?usp=sharing
+
+      ## Laser 102
+      - Engraving bitmaps, photos, dithering.
+      - Cutting your own materials. Developing presets. (With the test cards)
+      -  https://docs.google.com/file/d/0B6FF3uhMs255X095c1NXbUFfcjA/view 
+      -  Run Test Cuts
+      -  Copy Test Cards To your Work Directory, Change to R/W
+      -  Start LaserCut
+      -  Open Test Cut File
+      -  Note lowest setting that consistently cuts through your
+      -  material
+      -  Note the power/speed settings that work for your material
+
+      ## RDWorks basics ???
+      - ![flow of a cut TODO](https://i.imgur.com/WCorDuR.png)
+      - Simple Drawing Tools
+      - Change Object Size
+      - Importing Files
+      - Setting Layers
+      - Moving Layer Order
+      - Setting Cutting Parameters
+      - Engraving Photo (BMP Icon)
+      - Setting Engraving Parameters (interval)
+      - Aligning Objects
+      - Flipping Object
+      - Moving one Color/Layer Around (red X)
+      - Combine Curve / Curve Auto Close
+      - Coordinate Criterion
+      - Matrix Copy
+      - Download File to Machine
+
+      # Laser 101
+
+      ## Laser101 Training Goals
+
+      - Lasercutter is NOT a printer; it is a CNC machine
+      - It is a tool that requires experience and craftsmanship to master
+      - Each job is unique and may require adjustments:
+        - Characteristics of the specific material
+          - Variations in thickness, Variations in construction...
+        - The current condition of the laser can affect performance
+          - Cleanliness of mirrors and lens, Aging of the tube, Bed alignment, Mirror alignment...
+
+      # What does laser cutter do?
+
+      ## CO2 Laser Cutting Mechanics and Bodor
+
+      ---
+
+      - Inspire awe. ([Nice explanation video](https://www.youtube.com/watch?v=lW4Uq_2VPhE)) and a nice one [on the physics of it. ](https://www.youtube.com/watch?annotation_id=annotation_3029&feature=iv&src_vid=lW4Uq_2VPhE&v=y3SBSbsdiYg)
+
+      ---
+
+      - LASER” is actually an acronym for Light Amplification by Stimulated Emission of Radiation.
+      - The laser beam is a column of very high intensity light, of a single wavelength, or color.
+      - It is a glorified neon sign. You have a gas, excite it with electricity, and you get photons (light) getting emitted by excited gas electrons. In case of NEON, the light is visible. In case of a typical CO2 laser, that wavelength is in the Infra-Red part of the light spectrum, so it is INVISIBLE to the human eye.
+
+      ---
+
+      - The gas mixture in our machine is comprised of carbon dioxide, nitrogen, hydrogen and helium. That's why it's called CO2 laser. The gas is being used up as we cut, and every now and then we need to get the laser-tube refilled or purchase a new one. 
+        ![laser like biology](https://i.imgur.com/fjEWSzy.png)
+
+      ---
+
+      - In the tube, there's a mirror on one side, and a partially-permeable mirror on the other side. The emitted light is bouncing between these two mirrors, and each time it passes through the tube, it gets amplified. But one of the mirrors is made to let through a bit of this light, about 2%, and that's our useful laser beam.
+        ![laser mirrors](https://i.imgur.com/hfNC1qB.png)
+      - The beam is only about 1cm in diameter as it travels from the laser resonator.
+
+      ---
+
+      - It is focused with a lens at the end of the nozzle. 
+       ![laser beam with kerf TODO](https://i.imgur.com/ZYDPVNd.png)
+      - We also blow air onto the cutting area through the nozzle, (oxygen + nitrogen) which helps to put out little fires and most importantly gets the smoke off the way and reduced build up of debris on the focus lens.
+      - It also helps create an exothermic reaction and cut more effectively. 
+
+      ## Introduction Bodor main components
+
+      - Our Machine Bodor
+        - Vendor: Bodor
+        - Model: BCL-1006XU
+        - Power: 100W Nominal 120W Max sealed glass CO2
+        - Max Cutting area: ??
+      - Show Laser Path (reinforce laser mechanics)
+      - Mention that the red laser is NOT the cutting one.
+        ![laser pizza](https://i.imgur.com/mP6AplB.png)
+      - Water Cooler System
+      - Compressor
+      - Filter
+      - PC
+
+      # Laser Usage Guidelines
+      ## Laser Usage Guidelines
+
+      - Everyone must go THIS training to use the laser.
+      - Pricing
+        - There's currently NO hourly rate. 
+          - FREE with the general yearly charge for maintenance. 
+        - (Maybe in the future: Usage limits included in membership/ 2 hrs/day and 8hrs/ week.)
+        - Users can buy the material they use from us (mdf/ wood) OR bring their own.
+      - Logbook
+        - Keep track of time used in the logbook on the laser.
+        - Use the machine timer available on the computer desktop.
+        - Calculate time that you are occupying the laser cutter computer, not just the time the laser is powered on. (Seat Time)
+        - Failure to do so may result in suspending lasercutter privileges.
+
+      # What can you do with a laser? 
+      ## What can you do with a laser? 
+      - Lasers are computer controlled machines that can either cut or engrave shapes.
+      - ![vector vs raster](https://i.imgur.com/J5RBm9G.png)
+      - ![cut vs engrave](https://i.imgur.com/9G2Nv2i.png)
+      - Cutting:
+        - laser follows vectors in your art work
+      - Engraving:
+        - laser “fills” polygons with a scanning motion
+        - polygons must be closed
+        - It's also possible to engraving Raster Images; this is used for variable depth engraving. 
+      - Big showcase of photos. 
+
+      ## Basic Cut Flow - Show one fast cut and Flow
+
+      - ??? Set up the gear file. Include various settings)
+      - 1. Get some design
+      - 2. Select material
+      - 3. Get it into RDWorks on the computer and set the laser settings (Open a prepared .rld file)
+      - 4. Start the laser, water cooler, filer, compressor
+      - 5. Cut the thing. 
+      - 6. Power the laser down
+      - 7. Clean up after yourself
+      - 8. Note the time in logbook. Can't leave the fablab without it. 
+        - Use some cool desktop timer???
+
+      ## Laser Safety - MOST important part. 
+
+      - Lid. No overriding. 
+      - Don't be looking straight into the cut intently for too long.  Not dangerous but can be very bright. The windows shield harmful light
+      - Don't cut materials that produce toxic gases
+      - Wear ear protectors if noise is a concern
+      - FIRE Section
+        - ![burnt laser](https://i.imgur.com/PNF8Qyy.png)
+        - Lasers cut by burning the material
+        - Fire will happen (Don't Panic!)
+        - Never leave the laser cutter unattended while it is operating. 
+        - Most of the materials used with the laser cutter are combustible and WILL ignite when in contact with the laser beam. If a fire should start inside the machine turn it off with the big red knob, then foot switch. Then alert staff. AND/ OR extinguish the fire.
+        - Check cutting bed for debris from previous use that might catch fire (use the Shop Vac)
+        - ??? REMINDER: BUY A SMALL FIRE EXTINGUISHER.
+
+      ## Materials
+
+      - It's on the wiki (but not as I like it yet)
+      - http://atxhackerspace.org/wiki/Laser_Cutter_Materials
+      - This list is comprised of only the most commonly used materials. Any materials NOT on the list that you want to cut MUST be approved by the a staff member prior to cutting! This is strictly enforced and will result in immediate loss of laser access.
+      - You CAN cut: 
+        - Chipboard
+        - Matte board
+        - Corrugated cardboard
+        - Poster board
+        - Foam core (poor results with small pieces)
+        - Acrylic (cast acrylic is recommended, extruded acrylic (which is cheaper) results in imprecise and soft edges). Plexiglas and Lucite are brands of acrylic.
+        - Leave protective paper on while cutting and engraving
+        - Woods: Bass, balsa, maple, cherry, poplar, walnut, oak, birch are the most common
+        - MDF
+        - Plywood
+        - Hardboard (masonite)
+        - Leather
+        - Cork
+        - Rubber (engraving only)
+        - Glass (engraving only, ¼ inch minimum thickness)
+      - You MUST NOT cut: 
+        - These materials are strictly prohibited because they are hazardous to both your health and the equipment. Anyone knowingly using these materials in the lasercutter will lose laser access and be held liable for any damage caused to equipment.
+        - No polycarbonates (Lexan, mylar, acetate, etc.)
+        - Polycarbonates are very similar to acrylic. When in doubt, ask staff!
+        - No soft woods and some hardwoods with high resin content
+        - These catch on fire easily. Examples: Pine, cedar, spruce, fir, cypress.
+        - No ABS plastic
+          - ABS does not cut well in a laser cutter. It tends to melt rather than vaporize, and has a higher chance of catching on fire and leaving behind melted gooey deposits on the vector cutting grid. It also does not engrave well (again, tends to melt). Also, cutting ABS plastic emits hydrogen cyanide, which is unsafe at any concentration.
+          - http://atxhackerspace.org/wiki/Laser_Cutter_Materials
+        - No vinyl (this includes PVC and PCV)
+        - No fiberglass
+        - No polyester
+        - No styrene
+
+      ## Powering Up
+
+      - Turn on PC and start RDWorks
+      - Turn on filter foot switch
+      - Make sure the cooler is on.
+      - Turn on Laser
+      - Make sure the Filter is on.
+
+      # LaserCut Project Walkthrough
+      ## LaserCut Project walkthrough (using ??? project as an example)
+
+      - Load in the material
+        - Only load material AFTER the printer is on and all homing is done
+        - Moving Z (rare)
+          - Depending no the position of the bed and thickness of your material, you may need to adjust the bed Z position as well.
+          - Press Z/U
+          - Press left and right to lower or raise the bed
+          - then exit back to the homescreen
+          - REMINDER: ADD A MARK ON THE LASER HEAD TUBE TO MARK THE MAXIMUM EXTENT.
+      - Focus
+        - ![laser beam focus](https://i.imgur.com/bYZNfkA.png)
+        - Show the depth cutting test, draw a basic diagram of lens focusing the beam.
+          - Show the thickness cutting thing.
+        - (Omit de-focusing for effect etc; we'll do that in Advanced Laser training)
+        - Focus by loosening the laser head assembly and dropping it onto the Laser Focusing Gadget.
+      - RDWorks: Highlights of Graphic Manipulation ??? not sure if here or later or Laser102
+        - Simple Drawing Tools
+        - Change Object Size
+        - Importing Files
+        - Engraving Photo (BMP Icon)
+        - Aligning Objects
+        - Flipping Object
+        - Moving one Color/Layer Around (red X)
+        - Combine Curve / Curve Auto Close
+        - Matrix Copy
+      - RDWorks: Set Up the Laser File
+        - Import dxf from InkScape
+          - Mention that .ai from Illustrator imports easily. 
+        - Bed dimensions ???
+        - Through cut, surface cut and engraving
+        - Parameters (Presets)
+        - Layers and colours
+        - Moving layer ORder
+        - Order of cutting
+        - Running the RDWorks simulation
+      - RFWorks: Sending the Laser File to the Laser
+        - Cutting options: 
+          - green dot reference point
+          - export selected graphics
+        - Testing
+          - Go scale
+          - Knob all the way to the left
+          - You may want to test your settings first on a piece of scrap before you burn your nice big sheet of mdf
+        - Download and cut vs. run over the USB vs. run from USB
+      - Cutting
+        - Lid
+        - Control panel, escape
+        - Moving head XY, origin
+      - Laser Hazards - Emergency stopping
+        - Reinforcing Laser Safety from earlier
+        - Process and progression for normal operation failure (fire) - pause, open, move, CO2
+        - Process for abnormal operation failure (mechanical/jam) - emergency stop, open, move, CO2
+
+      ## Power Down
+
+      - Switch off laser
+      - Switch off filtration
+      - Switch off the foot switch
+      - Clean all parts and debris from the cutting bed. Pick up all scraps from the floor around the machine.
+      - Close lid
+      - Log yourself into the logbook. 
+
+      ---
+
+      # Individual Training Task
+
+      ## Individual Training Task
+
+      - The individual task to get familiar, prompt questions and check understanding:
+      - Make a personalised gear on the wall of gears. 
+        - (Got us a template IN RDWORKS? But we only got macs... so combine with dxf.)
+        - Member's name... "Went through laser training and dynamic date")
+        - Template file only one color. User should set up use through cut, surface cut, engrave, dot. 
+        - Should demonstrate all steps, size, appropriate ordering, positioning
+        - Set individual to work, don't prompt but do answer questions (or pose if needed)
+        - Talk through design once done, question/check things etc
+        - Proceed to lasering (watch carefully all steps)
+        - Ask to stop job/restart, question escalation process
+        - Assuming all ok:
+        - Get them to read the health and safety notes about operation and materials
+        - Add to the trained member list (web, db?) +  wall of gears. 
+        - For next 2-3 projects, ensure member will seek fablab steward before hitting the 'cut' button (second pair of eyes)
+
+      ## Resources
+      - All the resources are accessible through http://fablab-hepl.ch/wiki/index.php?title=Decoupe_Laser
+
+      ### RDWorks
+        - Download RDWorks (Windows only) Software on your own computer:
+          - http://www.rd-acs.com/Private/Files/15454d2c1d0258c5a400.rar
+        - Lab youtube series:
+          - https://www.youtube.com/playlist?list=PLjSZrgjcrhs405L2FsE_JwJ6u3uhhXkiB
+          - https://www.youtube.com/playlist?list=PLeKaKWOIPgi_XP6Nxzeapp-vUMCLQyVMB
+
+      ### Misc Links
+      - Sawmill Creek Engravers forum
+        - Great information on techniques and running a laser business
+        - http://www.sawmillcreek.org/forumdisplay.php?8-Engravers-Forum
+      - Showcase of work done by others/Inspiration
+        - http://www.pinterest.com/explore/laser-cutting/
+        - http://thelasercutter.blogspot.com/
+
+      ### Misc Links II
+        - Converting images to vector art in Gimp
+          - http://chetanism.blogspot.com/2009/07/photo-to-vector-art.html
+        - Engraving Fonts
+          - http://www.evilmadscientist.com/2011/hershey-text-an-inkscape-extension-for-engraving-fonts/
+        - Gear Template Generator
+          - http://woodgears.ca/gear_cutting/template.html
+        - Half Tone Effects In Inkscape
+          - http://istarlome.deviantart.com/art/halftone-effect-in-inkscape-85648573
+        - Planetary gear Calling Card
+          - http://www.thingiverse.com/thing:211
+    
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="remark.language.js"></script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark',
+          highlightLines: true
+        }) ;
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-44561333-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.scripts[0];
+        s.parentNode.insertBefore(ga, s);
+      }());
+    </script>
+  </body>
+</html>

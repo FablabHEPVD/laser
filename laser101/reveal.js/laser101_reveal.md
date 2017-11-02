@@ -2,7 +2,7 @@
 Go and see [this presentation's source code](https://github.com/FablabHEPVD/laser)
 
 ---
-### Laser101 Training Goals
+## Laser101 Training Goals
 ![](https://i.imgur.com/DqSqFUT.png)<!-- .element height="50%" width="50%" -->
 Notes:
 - Lasercutter is NOT a printer; it is a CNC machine
@@ -32,7 +32,7 @@ Notes:
   - Vendor: Bodor
   - Model: BCL-1006XU
   - Power: 100W Nominal 120W Max sealed glass CO2
-  - Max Cutting area: ??
+  - Max Cutting area: 1000 x 600 x 240mm
   - Water Cooler System, Compressor, Filter, PC
 
 --
